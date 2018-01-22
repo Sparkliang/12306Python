@@ -134,13 +134,13 @@ class hackTickets(object):
 
     def __init__(self):
         # 读取城市中文与三字码映射文件，获得转换后到城市信息-- “武汉”: "武汉,WHN"
-        self.city_codes = self.loadCityCode();
+        self.city_codes = self.loadCityCode()
 
         # 加载席别
         self.loadSeatType()
 
         # 读取配置文件，获得初始化参数
-        self.loadConfig();
+        self.loadConfig()
 
     def login(self):
         print("开始登录...")
@@ -198,7 +198,7 @@ class hackTickets(object):
         count=0
         while self.driver.url == self.ticket_url:
             # 勾选车次类型，发车时间
-            self.searchMore();
+            self.searchMore()
             sleep(0.05)
             self.driver.find_by_text(u"查询").click()
             count += 1
@@ -216,7 +216,7 @@ class hackTickets(object):
         count=0
         while self.driver.url == self.ticket_url:
             # 勾选车次类型，发车时间
-            self.searchMore();
+            self.searchMore()
             sleep(0.05)
             self.driver.find_by_text(u"查询").click()
             count += 1
@@ -311,7 +311,7 @@ class hackTickets(object):
         self.driver.visit(self.ticket_url)
 
         # 自动购买车票
-        self.buyTickets();
+        self.buyTickets()
 
 if __name__ == '__main__':
     print("===========hack12306 begin===========")
